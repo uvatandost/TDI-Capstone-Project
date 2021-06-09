@@ -2,19 +2,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import altair as alt
-from vega_datasets import data
 import matplotlib.pyplot as plt
 import plotly
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
-import time
-import janitor # pip install pyjanitor
-import pandas as pd
-try:
-		import configparser
-except:
-		from six.moves import configparser
-
 import plotly.graph_objects as go
 import dill
 """
@@ -29,12 +20,7 @@ st.write("Conflicts and wars seem to never end in the world we're livig in. This
 # Loading QoG data-----------------------------------------------------------
 data_source = "qog_cleaned.csv"
 
-# @st.cache
-# def load_data():
-# 		data = pd.read_csv(data_source, low_memory=False)
-# 		return data
 
-# qog = load_data()
 qog = pd.read_csv(data_source)
 
 
@@ -110,7 +96,6 @@ bti_si = st.sidebar.checkbox('State Identity')
 bti_sp = st.sidebar.checkbox('Separation of Powers')
 country1 = country
 
-#for item in [bti_ci, bti_seb, bti_si, bti_sp]:
 my_list = []
 if bti_ci:
 	my_list.append('Conflict Intensity')

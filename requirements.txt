@@ -1,13 +1,10 @@
 streamlit
 numpy
 altair
-vega_datasets
 matplotlib
 plotly
 seaborn
 sklearn
-janitor
 pandas
-configparser
 plotly
 dill
