@@ -6,7 +6,6 @@ matplotlib
 plotly
 seaborn
 sklearn
-time
 janitor
 pandas
 configparser
