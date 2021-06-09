@@ -1,0 +1,14 @@
+streamlit
+numpy
+altair
+vega_datasets
+matplotlib
+plotly
+seaborn
+sklearn
+time
+janitor
+pandas
+configparser
+plotly
+dill

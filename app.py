@@ -165,10 +165,6 @@ with st.beta_expander("See the data"):
 "\n"
 # Altair Line scatterplots----------------------------------------
 
-import altair as alt
-import pandas as pd
-import numpy as np
-
 for item in options:
 
 	chart = alt.Chart(df_year,width=600, height=350).mark_point(size=100).encode(
