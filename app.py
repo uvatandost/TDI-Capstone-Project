@@ -105,6 +105,9 @@ if bti_si:
 	my_list.append('State Identity')
 if bti_sp:
 	my_list.append('Separation of Powers')
+if not my_list:
+	my_list.append('Conflict Intensity')
+
 
 country1 = country[my_list]
 
