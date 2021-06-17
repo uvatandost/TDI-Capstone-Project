@@ -51,7 +51,7 @@ df_year.drop('year', axis=1)
 
 groupedby_year = qog.loc[qog.groupby('year').groups[year]]
 
-
+"Please use the slider on the left to see how the map changes over the years."
 # World Map matplotlib
 df = groupedby_year
 
@@ -127,7 +127,7 @@ with st.beta_expander("See the data"):
 "\n"
 "\n"
 "\n"
-"Here you can pick and see changes in any of the government qualities for selected country over the years 2005 through 2019"
+"Here you can see changes in any of the government qualities for a country over the years 2005 through 2019 for the country and its government qualities selected on the leftside panel."
 st.line_chart(country1)
 
 
@@ -143,7 +143,7 @@ options = st.sidebar.multiselect(
 	'Civil Society Participation', 'Civil Rights',
 	'Association/Assembly Rights'])
 
-"Finally, you can see in the scatterplots below the relationship between any government quality selected on the left panel and conflict intensity across the countries. You can also change the year to see the trend over the years."
+"Finally, you can pick a measure from the panel on the left to see scatterplots below that illustrate the relationship between the selected government quality and conflict intensity across the countries. You can also use the year slidebar to change the year to see the trend over the years."
 
 with st.beta_expander("See the data"):
 		df_year
@@ -154,7 +154,8 @@ with st.beta_expander("See the data"):
 # Altair Line scatterplots----------------------------------------
 
 for item in options:
-
+	if not item:
+		item = 'Socio-Economic Barriers'
 	chart = alt.Chart(df_year,width=600, height=350).mark_point(size=100).encode(
 	    x=item,
 	    y='Conflict Intensity:Q'
